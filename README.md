@@ -13,4 +13,4 @@ To build the assets in src folder to public folder.
 ### `npm start`
 
 To run the app.
-Open Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
