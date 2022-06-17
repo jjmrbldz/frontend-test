@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jejo Frontend Test | Register</title>
+        <link rel="icon" href="favicon_saschegg.ico">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+
+    <body>
+        <div id="root">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand">Navbar</a>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="register-box card rounded p-3 mt-5 mx-auto border-0 shadow ">
+                    <h1 class="mb-3">Register</h1>
+                    <form id="registerForm">
+                        {% for input in inputItems %}
+                            {% if input.type === "text" %}
+                                <div class="mb-3">
+                                    <label for="{{loop.key}}" class="form-label">{{loop.key}}</label>
+                                    <input type={{input.type}} name="{{loop.key}}" class="form-control" id="{{loop.key}}" {% if input.maxlength %} maxlength="{{input.maxlength}}" {% endif %} {% if input.req===0 %} required {% endif %}>
+                                </div> 
+                           
+                            {% elseif input.type === "select" %}
+                                <div class="mb-3">
+                                    <label class="form-label" for="{{loop.key}}">
+                                        {{loop.key}}
+                                    </label>
+                                    <select class="form-select" {% if input.req===0 %} required {% endif %}>
+                                        {% for key, value in input.values %}
+                                            <option value="{{value}}" {% if loop.first %} selected {% endif %}>{{value}}</option>
+                                        {% endfor %} 
+                                      </select>
+                                </div>
+                            {% elseif input.type === "password" %}
+                                <div class="mb-3">
+                                    <label for="{{loop.key}}" class="form-label">{{loop.key}}</label>
+                                    <input type={{input.type}} name="{{loop.key}}" class="form-control" id="{{loop.key}}" {% if input.maxlength %} maxlength="{{input.maxlength}}" {% endif %} {% if input.req===0 %} required {% endif %}>
+                                </div> 
+                            {% elseif input.type === "checkbox" %}
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="{{input.type}}" value="" id="{{loop.key}}" {% if input.req===0 %} required {% endif %}>
+                                    <label class="form-check-label" for="{{loop.key}}">
+                                        {{loop.key}}
+                                    </label>
+                                </div>
+                            {% endif %}
+                        {% endfor %} 
+                        <button type="submit" class="btn btn-primary btn-lg w-100">REGISTER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/additional-methods.min.js"></script>
+        <script src="js/validation-min.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,1 @@
+$(document).ready(function(){fetch("http://localhost:8080/getRegex").then(e=>e.json()).then(e=>console.log(e)).catch(e=>console.error(e))});

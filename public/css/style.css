@@ -1,0 +1,41 @@
+html {
+  height: 100vh;
+}
+html nav {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1803921569);
+  padding: 0 3rem;
+}
+
+.login-box {
+  max-width: 400px;
+}
+
+.register-box {
+  max-width: 640px;
+}
+
+label.is-valid, label.is-invalid {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+}
+label.is-invalid {
+  color: #dc3545;
+}
+label.is-valid {
+  color: #198754;
+}
+
+@media (max-width: 567px) {
+  html {
+    font-size: 12px;
+  }
+  html nav {
+    padding: 0 10px;
+    flex-wrap: nowrap;
+  }
+  .login-box,
+.register-box {
+    width: 100%;
+  }
+}

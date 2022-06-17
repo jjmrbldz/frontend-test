@@ -1,0 +1,13 @@
+@media (max-width: 567px) {
+    html {
+        font-size: 12px;
+        nav {
+            padding: 0 10px;
+            flex-wrap: nowrap;
+        }
+    }
+    .login-box,
+    .register-box {
+        width: 100%;
+    }
+}
